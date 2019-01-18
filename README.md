@@ -7,6 +7,16 @@ SD Cards and flash memory store data in the form of charged cells. If the cells 
 
 My father has a habit of taking the SD Cards from digital cameras and putting them on a shelf as flash media. Eventually, due to charge degradation, these will be useless. The idea here is to make it easy for him to label what he has, refresh the flash media, made multiple copies of the data (parity/optical/hard disk/cloud), and move on to the next card in an automated fashion. 
 
+## Features
+
+| Feature  |      Are      |
+|----------|:-------------:|
+| copy-files | implemented  |
+| parity   | implemented  |
+| refresh flash | not yet implemented  |
+| burn disc | not yet implemented  |
+| web gallery | not yet implemented  |
+
 ## Prerequisites
 
 Python installed. I am using anaconda available from [[https://www.anaconda.com/download/]]
@@ -20,12 +30,14 @@ pip install par2deep (--user) #for parity file generation
 
 This will guide you through the process with a text driven prompt that will ask what options you want turned on:
 ```
-py inTriplicate.py
+py inTriplicate.py -s </path/toMedia>
 ```
 
 This will run with minimum prompts, and all options turned on:
 ```
-py inTriplicate.py --source=/media/myFlashdrive --burn-cd --copy-to=/mnt/sdb1/pictures --refreshFlash --generate-galleries --generate-parity
+usage: inTriplicate.py [-h] -s SOURCE [-d DESTINATION] [-b BURN] [-r REFRESH]
+                       [-g GALLERY] [-p PARITY]
+inTriplicate.py: error: the following arguments are required: -s/--source
 ```
 
 
